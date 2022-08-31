@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Anek+Telugu:wght@200&family=Pacifico&family=Poppins:wght@100&family=Roboto:wght@100&display=swap');
 
 :root {
-    --primary-color: #E9EAEC;
-    --secondary-color: #FAD02C;
-    --third-color: #90ADC6;
-    --fourth-color: #333652;
+    --icon-color: #E9EAEC;
+    --yellow-color: #FAD02C;
+    --blue-color: #333652;
+    --grey-color: #90ADC6;
+    --dark-color: #000;
+    /* texte, icon,... */
     font-size: 16px;
 }
 
@@ -12,11 +14,13 @@
     padding: 0;
     margin: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing: border-box;
 }
 
 .navbar {
     display: flex;
     align-items: center;
+    background-color: var(--yellow-color);
     justify-content: space-between;
 }
 
@@ -30,12 +34,30 @@
     z-index: 1;
     font-family: 'Pacifico';
     font-size: 1.8rem;
+    color: var(--dark-color);
 }
 
 .burger-icon {
     z-index: 1;
-    width: 40px;
+    width: 50px;
     padding: 10px;
+    cursor: pointer;
+    /* color: var(--element-color); */
+}
+
+i.light-icon {
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+    width: 60px;
+    margin: 1%;
+    padding: 5px;
+    background-color: var(--blue-color);
+    border-radius: 10px;
+    box-shadow: 0 0 2px #888;
+    cursor: pointer;
+    font-size: 2.2rem;
+    color: var(--icon-color);
 }
 
 .navbar-links {
@@ -45,7 +67,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    background-color: var(--secondary-color);
+    background-color: var(--yellow-color);
     width: 100%;
     height: 100%;
     transform: translateY(-100%);
@@ -93,7 +115,38 @@
 .navbar-links ul li a {
     font-family: 'Pacifico';
     text-decoration: none;
-    color: black;
+    color: var(--dark-color);
     cursor: pointer;
     font-size: 1.6rem;
+}
+
+@media only screen and (min-width: 1150px) {
+    .burger-icon {
+        display: none;
+    }
+
+    .navbar-links {
+        position: relative;
+        transform: unset;
+    }
+
+    .navbar-links ul {
+        flex-direction: row;
+        margin-left: auto;
+    }
+
+    .navbar-title {
+        font-size: 1.5rem;
+        margin: 0% 1%;
+    }
+
+    .navbar-links ul li a {
+        font-size: 1.3rem;
+    }
+
+    .navbar-links ul li:nth-child(3),
+    .navbar-links ul li:nth-child(5) {
+        /* background-color: blue; */
+        border-right: 2px solid var(--dark-color);
+    }
 }
