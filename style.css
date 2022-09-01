@@ -20,10 +20,18 @@
 /* navbar */
 
 .navbar {
-    display: flex;
-    align-items: center;
+    position: fixed;
+    z-index: 1;
     background-color: var(--yellow-color);
+    width: 100%;
+    height: 80px;
+}
+
+.navbar-container {
+    display: flex;
     justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid black;
 }
 
 .navbar-logo {
@@ -63,16 +71,11 @@ i.light-icon {
 }
 
 .navbar-links {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     position: absolute;
     top: 0;
     left: 0;
-    background-color: var(--yellow-color);
     width: 100%;
-    height: 100%;
-    transform: translateY(-100%);
+    transform: translateY(-400px);
 }
 
 .menu-close-mobile {
@@ -85,21 +88,21 @@ i.light-icon {
 
 @keyframes upToDown {
     from {
-        transform: translateY(-100%);
+        transform: translateY(-400px);
     }
 
     to {
-        transform: translateY(0%);
+        transform: translateY(83px);
     }
 }
 
 @keyframes downToUp {
     from {
-        transform: translateY(0%);
+        transform: translateY(83px);
     }
 
     to {
-        transform: translateY(-100%);
+        transform: translateY(-400px);
     }
 }
 
@@ -108,6 +111,8 @@ i.light-icon {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    background-color: var(--yellow-color);
 }
 
 .navbar-links ul li {
@@ -129,6 +134,7 @@ i.light-icon {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-top: 100px;
 }
 
 .header-top,
@@ -146,7 +152,7 @@ i.light-icon {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 7%;
+    margin: 7%;
 }
 
 .header-face a img {
@@ -162,10 +168,6 @@ i.light-icon {
 .header-infos {
     padding: 3%;
     margin: 2%;
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; */
     border: 1px solid black;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
@@ -186,11 +188,13 @@ i.light-icon {
     .navbar-links {
         position: relative;
         transform: unset;
+        margin-left: auto;
+        width: unset;
     }
 
     .navbar-links ul {
         flex-direction: row;
-        margin-left: auto;
+        /* margin-left: auto; */
     }
 
     .navbar-title {
