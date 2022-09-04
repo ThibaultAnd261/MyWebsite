@@ -30,19 +30,51 @@ let theme = 0; // 0 = nuit, 1 = jour
 // changement de thème (nuit/jour)
 function websiteTheme() {
     const themeIcon = document.querySelector('.light-icon');
-    console.log(themeIcon);
-    // console.log(theme);
-    if (theme == 0) {
-        document.documentElement.style.setProperty('--yellow-color', '#333652');
-        document.documentElement.style.setProperty('--blue-color', '#FAD02C');
+    const waveSvg = document.querySelector('.wave');
+    if (theme == 0) { // nuit à jour
+        document.documentElement.style.setProperty('--navbar-color', '#333652');
+        document.documentElement.style.setProperty('--navbar-color2', '#474959');
+        document.documentElement.style.setProperty('--writing-color', '#fff');
+        document.documentElement.style.setProperty('--icon-filled-color', '#FAD02C');
+        document.documentElement.style.setProperty('--header-info-color', '#888888');
+        waveSvg.style.fill = '#474959';
         themeIcon.classList.remove('fa-moon');
         themeIcon.classList.add('fa-sun');
         theme++;
-    } else {
-        document.documentElement.style.setProperty('--yellow-color', '#FAD02C');
-        document.documentElement.style.setProperty('--blue-color', '#333652');
+    } else { // jour à nuit  
+        document.documentElement.style.setProperty('--navbar-color', '#FAD02C');
+        document.documentElement.style.setProperty('--navbar-color2', '#f6d861');
+        document.documentElement.style.setProperty('--writing-color', '#000');
+        document.documentElement.style.setProperty('--icon-filled-color', '#333652');
+        document.documentElement.style.setProperty('--header-info-color', '#fff');
+        waveSvg.style.fill = '#f6d861';
         themeIcon.classList.remove('fa-sun');
         themeIcon.classList.add('fa-moon');
         theme--;
     }
 }
+
+var sentences = [
+    { "sentence": "Bienvenue sur mon portfolio" },
+    { "sentence": "Bonne navigation" },
+    { "sentence": "N'hésitez pas à me contacter" }
+];
+
+function headerText(index) {
+    const sentenceDiv = document.querySelector('.header-sentence');
+    sentenceDiv.textContent = sentences[index].sentence;
+    return 1;
+}
+
+let index = 0; // permet l'affichage d'une certaine phrase en fonction de l'index
+headerText(index);
+index++;
+
+const countDownSentence = setInterval(() => {
+    headerText(index);
+    index++;
+    if (index == sentences.length) {
+        index = 0;
+    }
+    // console.log(index);
+}, 5000);

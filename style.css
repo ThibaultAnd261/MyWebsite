@@ -1,12 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Anek+Telugu:wght@200&family=Pacifico&family=Poppins:wght@100&family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
 
 :root {
-    --icon-color: #E9EAEC;
+    /* --icon-color: #E9EAEC;
     --yellow-color: #FAD02C;
+    --yellow2-color: #f6d861;
     --blue-color: #333652;
+    --blue-color2: #474959;
     --grey-color: #90ADC6;
-    --dark-color: #000;
+    --dark-color: #000; */
     /* texte, icon,... */
+
+    --navbar-color: #FAD02C;
+    --navbar-color2: #f6d861;
+    --writing-color: #000;
+    --icon-filled-color: #333652;
+    --icon-color: #fff;
+    --header-info-color: #fff;
+    /*#888888*/
     font-size: 16px;
 }
 
@@ -22,7 +33,7 @@
 .navbar {
     position: fixed;
     z-index: 1;
-    background-color: var(--yellow-color);
+    background-color: var(--navbar-color);
     width: 100%;
     height: 80px;
 }
@@ -44,7 +55,7 @@
     z-index: 1;
     font-family: 'Pacifico';
     font-size: 1.8rem;
-    color: var(--dark-color);
+    color: var(--writing-color);
 }
 
 .burger-icon {
@@ -62,7 +73,7 @@ i.light-icon {
     width: 60px;
     margin: 1%;
     padding: 5px;
-    background-color: var(--blue-color);
+    background-color: var(--icon-filled-color);
     border-radius: 10px;
     box-shadow: 0 0 2px #888;
     cursor: pointer;
@@ -112,7 +123,7 @@ i.light-icon {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    background-color: var(--yellow-color);
+    background-color: var(--navbar-color);
 }
 
 .navbar-links ul li {
@@ -122,24 +133,54 @@ i.light-icon {
 .navbar-links ul li a {
     font-family: 'Pacifico';
     text-decoration: none;
-    color: var(--dark-color);
+    color: var(--writing-color);
     cursor: pointer;
     font-size: 1.6rem;
 }
 
 /* Header */
 .header {
-    padding: 5%;
+    background-color: var(--navbar-color2);
+    padding: 100px 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 100px;
 }
 
 .header-top,
 .header-bottom {
     margin: 5% 0%;
+    width: 100%;
+}
+
+.header-welcome {
+    text-align: center;
+    height: 80px;
+    overflow: hidden;
+}
+
+.header-sentence {
+    font-family: 'Poppins', sans-serif;
+    color: var(--writing-color);
+    font-size: 1.5rem;
+    display: inline-block;
+    overflow: hidden;
+    word-break: break-word;
+    animation: typing linear 5s infinite;
+    font-weight: bolder;
+}
+
+@keyframes typing {
+    from {
+        width: 0%;
+        /* opacity: 0; */
+    }
+
+    to {
+        width: 100%;
+        /* opacity: 1; */
+    }
 }
 
 .header-face {
@@ -166,6 +207,8 @@ i.light-icon {
 }
 
 .header-infos {
+    /* background-color: #fff; */
+    background-color: var(--header-info-color);
     padding: 3%;
     margin: 2%;
     border: 1px solid black;
@@ -178,6 +221,8 @@ i.light-icon {
     justify-content: space-between;
     flex-flow: row wrap;
     margin: 2% 0%;
+    color: var(--writing-color);
+    font-family: 'Poppins', sans-serif;
 }
 
 @media only screen and (min-width: 1150px) {
@@ -209,6 +254,6 @@ i.light-icon {
     .navbar-links ul li:nth-child(3),
     .navbar-links ul li:nth-child(5) {
         /* background-color: blue; */
-        border-right: 2px solid var(--dark-color);
+        border-right: 2px solid var(--writing-color);
     }
 }
