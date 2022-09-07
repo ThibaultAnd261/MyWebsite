@@ -1,3 +1,156 @@
-{
-    "sentence": "Test"
-}
+[
+    {
+        "name": "Portfolio",
+        "description": "Site professionnel mettant en avant mes compétences et les projets créés.",
+        "git": "https://github.com/ThibaultAnd261/MyWebsite",
+        "web": "",
+        "languages": [
+            "HTML5",
+            "CSS3",
+            "Javascript"
+        ],
+        "framework": "",
+        "API": "",
+        "images": [
+            "./assets/img/Thibault.jpg"
+        ],
+        "category": "Web"
+    },
+    {
+        "name": "Blocus",
+        "description": "Les joueurs concernés doivent définir la position de leur pion sur une grille puis ensuite le déplacer tout en bannissant une case libre. Le premier joueur qui ne peut plus déplacer son pion (car toutes les cases adjacentes sont condamnées ou occupées) a perdu.",
+        "git": "https://dwarves.iut-fbleau.fr/git/martinv/PT11_APL2020",
+        "web": "",
+        "languages": [
+            "C89"
+        ],
+        "framework": "",
+        "API": "",
+        "images": [
+            "./assets/img/Thibault.jpg"
+        ],
+        "category": "Jeu"
+    },
+    {
+        "name": "Samegame",
+        "description": "Un jeu reprenant le thème de Minecraft. Le but est d'éliminer tous les composants de la grille et en fonction du groupe éliminé, le nombre de point peut doubler voire même tripler.",
+        "git": "https://dwarves.iut-fbleau.fr/git/martinv/PT21_APL2020",
+        "web": "",
+        "languages": [
+            "Java"
+        ],
+        "framework": "",
+        "API": "",
+        "images": [
+            "./assets/img/Thibault.jpg"
+        ],
+        "category": "Jeu"
+    },
+    {
+        "name": "DoodleLike",
+        "description": "Site web de meeting se nommant Karenda, s'inspirant du Doodle.",
+        "git": "",
+        "web": "https://dwarves.iut-fbleau.fr/~martinv/ProjetPHP2021/Projet/",
+        "languages": [
+            "HTML5",
+            "CSS",
+            "Javascript",
+            "PHP",
+            "Sql"
+        ],
+        "framework": "CodeIgniter",
+        "API": "",
+        "images": [
+            "./assets/img/Thibault.jpg"
+        ],
+        "category": "Web"
+    },
+    {
+        "name": "Stagia",
+        "description": "Le nouveau site de recherche de stage. Un site web se focalisant principalement la notion d'ergonomie et s'appuyant sur des Wireframe/Wireflow. Projet mené en groupe.",
+        "git": "",
+        "web": "https://dwarves.iut-fbleau.fr/~martinv/Stagia/",
+        "languages": [
+            "HTML5",
+            "CSS"
+        ],
+        "framework": "",
+        "API": "",
+        "images": [
+            "./assets/img/Thibault.jpg"
+        ],
+        "category": "Web"
+    },
+    {
+        "name": "Réservation d'hôtel",
+        "description": "IHM de gestion de chambres d’un hôtel qui dispose des chambres de différents types. Projet mené en groupe.",
+        "git": "https://github.com/ThibaultAnd261/IHM",
+        "web": "",
+        "languages": [
+            "Java",
+            "Sql"
+        ],
+        "framework": "",
+        "API": "",
+        "images": [
+            "./assets/img/Thibault.jpg"
+        ],
+        "category": "IHM"
+    },
+    {
+        "name": "Hypershoot",
+        "description": "Site Web incluant un jeu de basket-ball et une boutique permettant à l'utilisateur d'acheter des consommables. Respecte les maquettes créées précédemment mais aussi la notion d'ergonomie. Projet mené en groupe.",
+        "git": "https://github.com/ThibaultAnd261/IHM",
+        "web": "",
+        "languages": [
+            "HTML5",
+            "CSS",
+            "Javascript",
+            "PHP",
+            "Sql",
+            "C#(Unity)"
+        ],
+        "framework": "CodeIgniter",
+        "API": "Paypal",
+        "images": [
+            "./assets/img/Thibault.jpg"
+        ],
+        "category": "Web"
+    },
+    {
+        "name": "CineWorld",
+        "description": "Un site web permettant à un utilisateur de rechercher ce qu'il souhaite sur le monde du cinéma. Créé via une API spécialement dédiée.",
+        "git": "https://github.com/ThibaultAnd261/CineWorld",
+        "web": "https://dwarves.iut-fbleau.fr/~andriama/cinema/",
+        "languages": [
+            "HTML5",
+            "CSS",
+            "Javascript"
+        ],
+        "framework": "RiotJS",
+        "API": "TheMovieDatabase",
+        "images": [
+            "./assets/img/Thibault.jpg"
+        ],
+        "category": "Web"
+    },
+    {
+        "name": "Outil de ticketing",
+        "description": "Outil de ticketing pour une entreprise dans un but de digitalisation. L'outil permet de déclarer un incident ou encore de visualiser les performances d'un service. Projet conçu via les avis des futurs utilisateurs.",
+        "git": "https://github.com/ThibaultAnd261/Ticketing---DGAC",
+        "web": "",
+        "languages": [
+            "HTML5",
+            "CSS",
+            "Javascript",
+            "PHP",
+            "Sql"
+        ],
+        "framework": "Laravel",
+        "API": "",
+        "images": [
+            "./assets/img/Thibault.jpg"
+        ],
+        "category": "Web"
+    }
+]

@@ -1,3 +1,5 @@
+// ----Partie menu burger
+
 // permet l'utilisation du menu burger
 function burgerMenu() {
     const navLinks = document.querySelector(".navbar-links");
@@ -25,6 +27,8 @@ function burgerMenu() {
             break;
     }
 }
+
+// ----Partie thème
 
 let theme = 0; // 0 = nuit, 1 = jour
 // changement de thème (nuit/jour)
@@ -54,6 +58,8 @@ function websiteTheme() {
     }
 }
 
+// ----Partie texte du header
+
 var sentences = [
     { "sentence": "Bienvenue sur mon portfolio" },
     { "sentence": "Bonne navigation" },
@@ -78,3 +84,9 @@ const countDownSentence = setInterval(() => {
     }
     // console.log(index);
 }, 5000);
+
+// ----Partie projet
+
+fetch("projects.json").then(res => res.json()).then(data => {
+    console.log(data);
+});
