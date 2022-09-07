@@ -256,4 +256,18 @@ i.light-icon {
         /* background-color: blue; */
         border-right: 2px solid var(--writing-color);
     }
+
+
+    .header {
+        padding: 10px 20px;
+        flex-direction: row;
+    }
+
+    .header-welcome {
+        height: 160px;
+    }
+
+    .header-sentence {
+        font-size: 1.8rem;
+    }
 }
