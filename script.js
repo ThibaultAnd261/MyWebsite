@@ -87,6 +87,14 @@ const countDownSentence = setInterval(() => {
 
 // ----Partie projet
 
-fetch("projects.json").then(res => res.json()).then(data => {
-    console.log(data);
-});
+fetch("projects.json")
+    .then(res => res.json())
+    .then(data => {
+        let namePr = document.querySelector('.project-name');
+        console.log(data);
+        console.log(namePr);
+        data.forEach(element => {
+            console.log(element.name);
+            namePr.innerHTML = element.name
+        });
+    });
