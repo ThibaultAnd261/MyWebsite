@@ -12,7 +12,8 @@
         "framework": "",
         "API": "",
         "images": [
-            "./assets/img/Thibault.jpg"
+            "./assets/img/Thibault.jpg",
+            "./assets/img/logo-TA.png"
         ],
         "category": "Web"
     },

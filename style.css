@@ -235,8 +235,13 @@ i.light-icon {
 }
 
 .projects-title {
-    text-align: center;
+    /* text-align: center; */
     margin: 10% 0;
+}
+
+.projects-title h1 {
+    text-align: center;
+    font-size: 1.8rem;
 }
 
 .projects-legend {
@@ -275,12 +280,64 @@ i.light-icon {
 .projects-grid {
     display: grid;
     grid-template-columns: auto;
-    gap: 10px;
+    gap: 1%;
 }
 
 .project {
-    margin: 10% 0%;
-    background-color: wheat;
+    padding: 5%;
+    border-radius: 20px;
+}
+
+.project.web {
+    background-color: rgb(126, 167, 99);
+}
+
+.project.jeu {
+    background-color: cyan;
+}
+
+.project.ihm {
+    background-color: red;
+}
+
+.project-title {
+    text-align: center;
+    font-size: 1.4rem;
+}
+
+.project-description {
+    text-align: justify;
+    margin: 3% 0%;
+    font-size: 1.1rem;
+}
+
+.project-category,
+.project-languages,
+.project-framework,
+.project-api {
+    text-align: end;
+}
+
+.project-languages i {
+    margin-left: 5%;
+    font-size: 2.2rem;
+    /* width: 40px; */
+}
+
+.project-image {
+    width: 80px;
+}
+
+.project-link {
+    text-align: end;
+}
+
+.project-link a i {
+    text-decoration: none;
+    color: #000;
+    font-size: 1.6rem;
+    margin-left: 5%;
+
 }
 
 @media only screen and (min-width: 1150px) {

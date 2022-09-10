@@ -90,11 +90,163 @@ const countDownSentence = setInterval(() => {
 fetch("projects.json")
     .then(res => res.json())
     .then(data => {
-        let namePr = document.querySelector('.project-name');
+        // let namePr = document.querySelector('.project-name');
+        let gridPr = document.querySelector('.projects-grid');
         console.log(data);
-        console.log(namePr);
+        // console.log(namePr);
         data.forEach(element => {
-            console.log(element.name);
-            namePr.innerHTML = element.name
+            const project = document.createElement("div");
+            project.classList.add("project");
+
+            const projectName = document.createElement("h3");
+            const projectDescr = document.createElement("p");
+            const projectCate = document.createElement("div");
+            projectCate.classList.add("project-category");
+
+            const projectLang = document.createElement("div");
+            projectLang.classList.add("project-languages");
+
+            const projectFram = document.createElement("div");
+            projectFram.classList.add("project-framework");
+
+            const projectApi = document.createElement("div");
+            projectApi.classList.add("project-api");
+
+            const projectGallery = document.createElement("div");
+
+            const projectLink = document.createElement("div");
+            projectLink.classList.add("project-link");
+
+            // titre du projet
+            projectName.innerHTML = element.name;
+            projectName.classList.add("project-title");
+
+            // description du projet
+            projectDescr.innerHTML = element.description;
+            projectDescr.classList.add("project-description");
+
+            // type de projet
+            projectCate.innerHTML = element.category;
+
+            // langages de programmation utilisés
+            var languages = element.languages;
+            languages.forEach(language => {
+                var text = document.createTextNode(language);
+                if (language == 'HTML5') {
+                    var logo = document.createElement("i");
+                    logo.classList.add("fa-brands", "fa-html5");
+                    logo.style.color = "#FFA500";
+                    projectLang.appendChild(logo);
+                }
+                if (language == 'CSS3') {
+                    var logo = document.createElement("i");
+                    logo.classList.add("fa-brands", "fa-css3-alt");
+                    logo.style.color = "#2965f1";
+                    projectLang.appendChild(logo);
+                }
+                if (language == 'Javascript') {
+                    var logo = document.createElement("i");
+                    logo.classList.add("fa-brands", "fa-js");
+                    logo.style.color = "#f7df1e";
+                    projectLang.appendChild(logo);
+                }
+                if (language == 'C89') {
+                    var logo = document.createElement("i");
+                    logo.classList.add("fa-solid", "fa-c");
+                    logo.style.color = "#fff";
+                    projectLang.appendChild(logo);
+                }
+                if (language == 'Java') {
+                    var logo = document.createElement("i");
+                    logo.classList.add("fa-brands", "fa-java");
+                    logo.style.color = "#fff";
+                    projectLang.appendChild(logo);
+                }
+                if (language == 'PHP') {
+                    var logo = document.createElement("i");
+                    logo.classList.add("fa-brands", "fa-php");
+                    logo.style.color = "#fff";
+                    projectLang.appendChild(logo);
+                }
+            });
+
+            // framework
+            const spanFr = document.createElement("span");
+            if (element.framework == "") {
+            } else {
+                spanFr.textContent = "Framework : " + element.framework;
+                projectFram.appendChild(spanFr);
+            }
+
+            // API
+            const spanApi = document.createElement("span");
+            if (element.API == "") {
+            } else {
+                spanApi.textContent = "API : " + element.API;
+                projectApi.appendChild(spanApi);
+            }
+
+
+            // image
+            var images = element.images;
+            images.forEach(image => {
+                const projectImg = document.createElement("img");
+                projectImg.src = image;
+                projectImg.classList.add("project-image");
+                projectGallery.appendChild(projectImg);
+            });
+
+            // couleur de la div
+            switch (element.category) {
+                case 'Web':
+                    project.classList.toggle("web");
+                    break;
+
+                case 'Jeu':
+                    project.classList.toggle("jeu");
+                    break;
+
+                case 'IHM':
+                    project.classList.toggle("ihm");
+                    break;
+
+                default:
+                    break;
+            }
+
+            // GIT
+            if (element.git == "") {
+            } else {
+                const linkGit = document.createElement("a");
+                linkGit.href = element.git;
+                linkGit.target = "_blank";
+                var logo = document.createElement("i");
+                logo.classList.add("fa-brands", "fa-github");
+                linkGit.appendChild(logo);
+                projectLink.appendChild(linkGit);
+            }
+            if (element.web == "") {
+            } else {
+                const linkWeb = document.createElement("a");
+                linkWeb.href = element.web;
+                linkWeb.target = "_blank";
+                var logo = document.createElement("i");
+                logo.classList.add("fa-brands", "fa-chrome");
+                linkWeb.appendChild(logo);
+                projectLink.appendChild(linkWeb);
+
+            }
+            // projectLink
+
+            // ajout des "enfants"
+            project.appendChild(projectName);
+            project.appendChild(projectDescr);
+            project.appendChild(projectCate);
+            project.appendChild(projectLang);
+            project.appendChild(projectFram);
+            project.appendChild(projectApi);
+            project.appendChild(projectGallery);
+            project.appendChild(projectLink);
+            gridPr.appendChild(project);
         });
     });
