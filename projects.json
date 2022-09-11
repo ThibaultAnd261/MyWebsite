@@ -12,8 +12,9 @@
         "framework": "",
         "API": "",
         "images": [
-            "./assets/img/Thibault.jpg",
-            "./assets/img/logo-TA.png"
+            "./assets/img/portfolioHTML.jpg",
+            "./assets/img/portfolioCSS.jpg",
+            "./assets/img/portfolioJS.jpg"
         ],
         "category": "Web"
     },
@@ -28,7 +29,8 @@
         "framework": "",
         "API": "",
         "images": [
-            "./assets/img/Thibault.jpg"
+            "./assets/img/blocusAccueil.jpg",
+            "./assets/img/blocusCode.jpg"
         ],
         "category": "Jeu"
     },
@@ -43,7 +45,9 @@
         "framework": "",
         "API": "",
         "images": [
-            "./assets/img/Thibault.jpg"
+            "./assets/img/samegameAccueil.jpg",
+            "./assets/img/samegameGrillePredef.jpg",
+            "./assets/img/samegameJeu.jpg"
         ],
         "category": "Jeu"
     },
@@ -62,7 +66,11 @@
         "framework": "CodeIgniter",
         "API": "",
         "images": [
-            "./assets/img/Thibault.jpg"
+            "./assets/img/doodleAccueil.jpg",
+            "./assets/img/doodleAjout.jpg",
+            "./assets/img/doodleInscription.jpg",
+            "./assets/img/doodleLogin.jpg",
+            "./assets/img/doodleSondage.jpg"
         ],
         "category": "Web"
     },
@@ -78,7 +86,10 @@
         "framework": "",
         "API": "",
         "images": [
-            "./assets/img/Thibault.jpg"
+            "./assets/img/stagiaAccueil.jpg",
+            "./assets/img/stagiaEntHome.jpg",
+            "./assets/img/stagiaEtuRech.jpg",
+            "./assets/img/stagiaRespHom.jpg"
         ],
         "category": "Web"
     },
@@ -94,7 +105,10 @@
         "framework": "",
         "API": "",
         "images": [
-            "./assets/img/Thibault.jpg"
+            "./assets/img/hotelPrereservListe.jpg",
+            "./assets/img/hotelRechID.jpg",
+            "./assets/img/hotelReserCree.jpg",
+            "./assets/img/hotelStatHotel.jpg"
         ],
         "category": "IHM"
     },
@@ -114,7 +128,11 @@
         "framework": "CodeIgniter",
         "API": "Paypal",
         "images": [
-            "./assets/img/Thibault.jpg"
+            "./assets/img/hypAcc.jpg",
+            "./assets/img/hypAccDis.jpg",
+            "./assets/img/hypLog.jpg",
+            "./assets/img/hypPro.jpg",
+            "./assets/img/hypReg.jpg"
         ],
         "category": "Web"
     },
@@ -131,7 +149,9 @@
         "framework": "RiotJS",
         "API": "TheMovieDatabase",
         "images": [
-            "./assets/img/Thibault.jpg"
+            "./assets/img/Cineworld1.jpg",
+            "./assets/img/Cineworld2.jpg",
+            "./assets/img/Cineworld3.jpg"
         ],
         "category": "Web"
     },
@@ -150,7 +170,10 @@
         "framework": "Laravel",
         "API": "",
         "images": [
-            "./assets/img/Thibault.jpg"
+            "./assets/img/Ticketing1.jpg",
+            "./assets/img/Ticketing2.jpg",
+            "./assets/img/Ticketing3.jpg",
+            "./assets/img/Ticketing4.jpg"
         ],
         "category": "Web"
     }

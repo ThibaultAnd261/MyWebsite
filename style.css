@@ -318,14 +318,41 @@ i.light-icon {
     text-align: end;
 }
 
+.project-gallery {
+    margin: 5% 0%;
+}
+
 .project-languages i {
     margin-left: 5%;
     font-size: 2.2rem;
     /* width: 40px; */
 }
 
+/* .project-slider {
+    text-align: center;
+} */
+
+.project-sliderCommand {
+    display: flex;
+    justify-content: center;
+    border: 1px solid #000;
+    box-shadow: 0 10px 10px rgb(0 0 0 / 30%);
+}
+
+.project-sliderCommand i {
+    font-size: 1.2rem;
+    margin: 3% 8%;
+    cursor: pointer;
+}
+
 .project-image {
-    width: 80px;
+    max-width: 320px;
+    display: none;
+}
+
+.project-image.active-img {
+    display: block;
+    max-width: 100%;
 }
 
 .project-link {

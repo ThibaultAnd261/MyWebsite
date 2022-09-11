@@ -94,7 +94,7 @@ fetch("projects.json")
         let gridPr = document.querySelector('.projects-grid');
         console.log(data);
         // console.log(namePr);
-        data.forEach(element => {
+        data.forEach((element, index) => {
             const project = document.createElement("div");
             project.classList.add("project");
 
@@ -113,6 +113,7 @@ fetch("projects.json")
             projectApi.classList.add("project-api");
 
             const projectGallery = document.createElement("div");
+            projectGallery.classList.add("project-gallery");
 
             const projectLink = document.createElement("div");
             projectLink.classList.add("project-link");
@@ -189,12 +190,37 @@ fetch("projects.json")
 
             // image
             var images = element.images;
-            images.forEach(image => {
+            // console.log(images[0]);
+            const slideshow = document.createElement("div");
+            slideshow.classList.add("project-slider");
+
+            images.forEach((image, index) => {
                 const projectImg = document.createElement("img");
                 projectImg.src = image;
-                projectImg.classList.add("project-image");
-                projectGallery.appendChild(projectImg);
+                if (index == 0) {
+                    projectImg.classList.add("project-image", "active-img");
+                } else {
+                    projectImg.classList.add("project-image");
+                }
+                slideshow.appendChild(projectImg);
+                projectGallery.appendChild(slideshow);
             });
+
+            const sliderCommand = document.createElement("div");
+            sliderCommand.classList.add("project-sliderCommand");
+
+            const leftArrow = document.createElement("i");
+            leftArrow.classList.add("fa-sharp", "fa-solid", "fa-arrow-left", "arrow");
+            leftArrow.setAttribute("onclick", "changeImage(" + index + ")");
+            const rightArrow = document.createElement("i");
+            rightArrow.classList.add("fa-sharp", "fa-solid", "fa-arrow-right", "arrow");
+            rightArrow.setAttribute("onclick", "changeImage(" + index + ")");
+
+
+            sliderCommand.appendChild(leftArrow);
+            sliderCommand.appendChild(rightArrow);
+
+            projectGallery.appendChild(sliderCommand);
 
             // couleur de la div
             switch (element.category) {
@@ -250,3 +276,8 @@ fetch("projects.json")
             gridPr.appendChild(project);
         });
     });
+
+
+function changeImage(index) {
+    console.log(index);
+}
