@@ -16,6 +16,11 @@
             "./assets/img/portfolioCSS.jpg",
             "./assets/img/portfolioJS.jpg"
         ],
+        "caption": [
+            "Code HTML du projet",
+            "Code CSS du projet",
+            "Code JS du projet"
+        ],
         "category": "Web"
     },
     {
@@ -31,6 +36,10 @@
         "images": [
             "./assets/img/blocusAccueil.jpg",
             "./assets/img/blocusCode.jpg"
+        ],
+        "caption": [
+            "Accueil du projet",
+            "Code C du projet"
         ],
         "category": "Jeu"
     },
@@ -48,6 +57,11 @@
             "./assets/img/samegameAccueil.jpg",
             "./assets/img/samegameGrillePredef.jpg",
             "./assets/img/samegameJeu.jpg"
+        ],
+        "caption": [
+            "Accueil du projet",
+            "Explorateur de fichiers permettant d'importer des grilles",
+            "Interface du jeu"
         ],
         "category": "Jeu"
     },
@@ -72,6 +86,13 @@
             "./assets/img/doodleLogin.jpg",
             "./assets/img/doodleSondage.jpg"
         ],
+        "caption": [
+            "Accueil du projet",
+            "Page de création de sondage",
+            "Page d'inscription",
+            "Page de connexion",
+            "Page de l'onglet \"Sondage\""
+        ],
         "category": "Web"
     },
     {
@@ -91,6 +112,12 @@
             "./assets/img/stagiaEtuRech.jpg",
             "./assets/img/stagiaRespHom.jpg"
         ],
+        "caption": [
+            "Accueil du projet",
+            "Section \"Accueil\" pour les entreprises",
+            "Section \"Recherche\" pour les étudiants",
+            "Section \"Accueil\" pour les responsables"
+        ],
         "category": "Web"
     },
     {
@@ -109,6 +136,12 @@
             "./assets/img/hotelRechID.jpg",
             "./assets/img/hotelReserCree.jpg",
             "./assets/img/hotelStatHotel.jpg"
+        ],
+        "caption": [
+            "Section \"Préréservation\" de l'hôtel",
+            "Section \"Recherche\" d'un ID",
+            "Section \"Réservation\", qui a été créée",
+            "Section \"Statistiques\" affichant les chiffres de l'hôtel"
         ],
         "category": "IHM"
     },
@@ -131,8 +164,17 @@
             "./assets/img/hypAcc.jpg",
             "./assets/img/hypAccDis.jpg",
             "./assets/img/hypLog.jpg",
+            "./assets/img/hypReg.jpg",
             "./assets/img/hypPro.jpg",
-            "./assets/img/hypReg.jpg"
+            "./assets/img/hypBou.jpg"
+        ],
+        "caption": [
+            "Page d'accueil du projet (connecté)",
+            "Page d'accueil du projet (déconnecté)",
+            "Page de connexion du projet (déconnecté)",
+            "Page d'inscription du projet (déconnecté)",
+            "Page profil",
+            "Page boutique"
         ],
         "category": "Web"
     },
@@ -152,6 +194,11 @@
             "./assets/img/Cineworld1.jpg",
             "./assets/img/Cineworld2.jpg",
             "./assets/img/Cineworld3.jpg"
+        ],
+        "caption": [
+            "Header du projet",
+            "Grid des films",
+            "Détail d'un film"
         ],
         "category": "Web"
     },
@@ -174,6 +221,12 @@
             "./assets/img/Ticketing2.jpg",
             "./assets/img/Ticketing3.jpg",
             "./assets/img/Ticketing4.jpg"
+        ],
+        "caption": [
+            "Page d'accueil du projet (connecté)",
+            "Création d'un ticket",
+            "Liste des incidents à gérer",
+            "Modal affichant les autres détails"
         ],
         "category": "Web"
     }

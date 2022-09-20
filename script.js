@@ -188,39 +188,43 @@ fetch("projects.json")
             }
 
 
-            // image
             var images = element.images;
-            // console.log(images[0]);
-            const slideshow = document.createElement("div");
-            slideshow.classList.add("project-slider");
+            // console.log(images);
 
-            images.forEach((image, index) => {
+            const imgFirst = document.createElement("div");
+            imgFirst.classList.add("project-imageFirst");
+
+            const imgCaption = document.createElement("div");
+            imgCaption.classList.add("project-imageCaption");
+            imgCaption.textContent = element.caption[0]
+            // console.log(element.caption[0]);
+
+            const imgs = document.createElement("div");
+            imgs.classList.add("project-images");
+
+            images.forEach((image, i) => {
                 const projectImg = document.createElement("img");
-                projectImg.src = image;
-                if (index == 0) {
+                // console.log(images);
+                if (i == 0) {
+                    projectImg.src = image;
+                    projectImg.alt = element.caption[i];
                     projectImg.classList.add("project-image", "active-img");
+                    imgFirst.appendChild(projectImg);
+                    projectGallery.appendChild(imgFirst);
                 } else {
+                    projectImg.src = image;
+                    projectImg.alt = element.caption[i];
                     projectImg.classList.add("project-image");
+                    projectImg.setAttribute("onclick", "test(" + i + "," + index + ")");
+                    imgs.appendChild(projectImg);
+                    projectGallery.appendChild(imgs);
                 }
-                slideshow.appendChild(projectImg);
-                projectGallery.appendChild(slideshow);
             });
 
-            const sliderCommand = document.createElement("div");
-            sliderCommand.classList.add("project-sliderCommand");
 
-            const leftArrow = document.createElement("i");
-            leftArrow.classList.add("fa-sharp", "fa-solid", "fa-arrow-left", "arrow");
-            leftArrow.setAttribute("onclick", "changeImage(" + index + ")");
-            const rightArrow = document.createElement("i");
-            rightArrow.classList.add("fa-sharp", "fa-solid", "fa-arrow-right", "arrow");
-            rightArrow.setAttribute("onclick", "changeImage(" + index + ")");
-
-
-            sliderCommand.appendChild(leftArrow);
-            sliderCommand.appendChild(rightArrow);
-
-            projectGallery.appendChild(sliderCommand);
+            projectGallery.appendChild(imgFirst);
+            projectGallery.appendChild(imgCaption);
+            projectGallery.appendChild(imgs);
 
             // couleur de la div
             switch (element.category) {
@@ -274,10 +278,66 @@ fetch("projects.json")
             project.appendChild(projectGallery);
             project.appendChild(projectLink);
             gridPr.appendChild(project);
+
+            // const collection = document.getElementsByClassName("project-slider");
+
+            // console.log(collection[index].children.length); // 3 2 3 5 4 4 5 3 4
         });
     });
 
-
+let cpt = 0;
 function changeImage(index) {
-    console.log(index);
+    console.log("Projet n°" + (index));
+    const collection = document.getElementsByClassName("project-slider");
+
+    const children = collection[index].querySelectorAll('.project-image');
+
+    console.log(children);
+    console.log(cpt + " : compteur début");
+
+    children[cpt].classList.remove("active-img");
+
+    console.log(children);
+    console.log(cpt + " : cpt avant incr");
+    if (cpt === (collection[index].children.length) - 1) {
+        cpt === 0;
+    } else {
+        cpt++;
+    }
+    console.log(cpt + " : compteur apres incr");
+
+    console.log(collection[index].children.length + " : nb d'enfant");
+    children[cpt].classList.add("active-img");
+
+
+    // console.log(collection[index].children.length); // 3
+    // console.log(collection[index]);
+    console.log(children);
+    // console.log(children[0].className);
+    console.log("-----------");
+}
+
+
+function test(indexImg, indexProj) {
+    fetch("projects.json")
+        .then(res => res.json())
+        .then(data => {
+            // images dynamiques
+            const imgDivPrincipal = document.querySelectorAll(".project-imageFirst .active-img"); // div de la première image
+            const imgsDiv = document.querySelectorAll(".project-images"); // div des sous images
+            const imgsChild = imgsDiv[indexProj].querySelectorAll(".project-image"); // pointe un enfant spécifique de imgsDiv
+
+            indexImg = indexImg - 1; // pour que les sous images commencent à 0 et non 1 (pb index envoyé depuis le premier fetch)
+            const imgPrincipalSrc = imgDivPrincipal[indexProj].src; // sauvegarde de la première image principale (celle dès le "load")
+            imgDivPrincipal[indexProj].src = imgsChild[indexImg].src; // transmission de la première sous image vers l'image principale
+            imgsChild[indexImg].src = imgPrincipalSrc; // transmission de la première image SAUVEGARDE vers une des sous images
+
+            // caption dynamique
+
+            const imgPrincipalAlt = imgDivPrincipal[indexProj].alt;
+            imgDivPrincipal[indexProj].alt = imgsChild[indexImg].alt;
+            imgsChild[indexImg].alt = imgPrincipalAlt;
+            const captionDiv = document.querySelectorAll(".project-imageCaption");
+            captionDiv[indexProj].textContent = imgDivPrincipal[indexProj].alt;
+        });
 }
