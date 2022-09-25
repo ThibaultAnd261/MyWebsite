@@ -87,7 +87,6 @@ const countDownSentence = setInterval(() => {
 
 
 // ----Partie projet
-// function projectLoading() {
 fetch("projects.json")
     .then(res => res.json())
     .then(data => {
@@ -298,7 +297,6 @@ fetch("projects.json")
         console.log(gridPr.childElementCount);
         tableauInit(gridPr.childElementCount);
     });
-// }
 
 // onclick
 function swapImg(indexImg, indexProj) {
@@ -349,8 +347,93 @@ function statutDiv(indexProj) {
     console.log(tab);
 }
 
-// window.addEventListener("load", myInit, true);
+var filterInt = 0;
+const projTop = document.querySelector(".projects-top");
 
-// function myInit() {
-//     projectLoading();
-// }
+function sortProject(typeProj) {
+    const webCollection = document.getElementsByClassName("project web");
+    const gameCollection = document.getElementsByClassName("project jeu");
+    const ihmCollection = document.getElementsByClassName("project ihm");
+
+
+    switch (typeProj) {
+        case "web":
+            for (let i = 0; i < webCollection.length; i++) {
+                if (webCollection[i].style.display = "none") {
+                    webCollection[i].style.display = "block";
+                }
+            }
+            for (let i = 0; i < gameCollection.length; i++) {
+                gameCollection[i].style.display = "none";
+            }
+            for (let i = 0; i < ihmCollection.length; i++) {
+                ihmCollection[i].style.display = "none";
+            }
+
+            filterInt = 1;
+
+            break;
+
+        case "jeu":
+            for (let i = 0; i < gameCollection.length; i++) {
+                if (gameCollection[i].style.display = "none") {
+                    gameCollection[i].style.display = "block";
+                }
+            }
+            for (let i = 0; i < webCollection.length; i++) {
+                webCollection[i].style.display = "none";
+            }
+            for (let i = 0; i < ihmCollection.length; i++) {
+                ihmCollection[i].style.display = "none";
+            }
+
+            filterInt = 1;
+
+            break;
+
+        case "ihm":
+            for (let i = 0; i < ihmCollection.length; i++) {
+                if (ihmCollection[i].style.display = "none") {
+                    ihmCollection[i].style.display = "block";
+                }
+            }
+            for (let i = 0; i < webCollection.length; i++) {
+                webCollection[i].style.display = "none";
+            }
+            for (let i = 0; i < gameCollection.length; i++) {
+                gameCollection[i].style.display = "none";
+            }
+
+            filterInt = 1;
+
+            break;
+
+        default:
+            break;
+    }
+
+    const btnReset = document.createElement("button");
+    btnReset.textContent = "Réinitialiser les filtres";
+    btnReset.setAttribute("onclick", "resetFilter()");
+    btnReset.classList.add("projects-btnReset");
+
+    // const projTop = document.querySelector(".projects-top");
+
+    let btnElmt = document.querySelector(".projects-btnReset");
+    if (filterInt == 1 && !(projTop.contains(btnElmt))) {
+        projTop.appendChild(btnReset);
+    }
+}
+
+function resetFilter() {
+    filterInt == 0;
+    var btnReset = document.querySelector(".projects-btnReset")
+    projTop.removeChild(btnReset);
+
+    const projCollection = document.getElementsByClassName("project");
+    for (let i = 0; i < projCollection.length; i++) {
+        if (projCollection[i].style.display = "none") {
+            projCollection[i].style.display = "block";
+        }
+    }
+}

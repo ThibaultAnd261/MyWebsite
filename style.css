@@ -2,22 +2,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
 
 :root {
-    /* --icon-color: #E9EAEC;
-    --yellow-color: #FAD02C;
-    --yellow2-color: #f6d861;
-    --blue-color: #333652;
-    --blue-color2: #474959;
-    --grey-color: #90ADC6;
-    --dark-color: #000; */
-    /* texte, icon,... */
-
     --navbar-color: #FAD02C;
     --navbar-color2: #f6d861;
     --writing-color: #000;
     --icon-filled-color: #333652;
     --icon-color: #fff;
     --header-info-color: #fff;
-    /*#888888*/
+    --web-color: rgb(126, 167, 99);
+    --jeu-color: #8c80af;
+    --ihm-color: #d68c1c;
     font-size: 16px;
 }
 
@@ -225,7 +218,6 @@ i.light-icon {
     font-family: 'Poppins', sans-serif;
 }
 
-
 .projects {
     padding: 20px;
 }
@@ -235,7 +227,6 @@ i.light-icon {
 }
 
 .projects-title {
-    /* text-align: center; */
     margin: 10% 0;
 }
 
@@ -254,6 +245,14 @@ i.light-icon {
     align-items: center;
 }
 
+.projects-btnReset {
+    width: 100%;
+    padding: 1%;
+    margin: 5% 0%;
+    border-radius: 10px;
+    font-size: 1.1rem;
+}
+
 .legend-color {
     /* background-color: aqua; */
     border-radius: 10px;
@@ -262,15 +261,15 @@ i.light-icon {
 }
 
 .legend-color.web {
-    background-color: #000;
+    background-color: var(--web-color);
 }
 
 .legend-color.jeu {
-    background-color: aqua;
+    background-color: var(--jeu-color);
 }
 
 .legend-color.ihm {
-    background-color: red;
+    background-color: var(--ihm-color);
 }
 
 .legend-title {
@@ -289,15 +288,15 @@ i.light-icon {
 }
 
 .project.web {
-    background-color: rgb(126, 167, 99);
+    background-color: var(--web-color);
 }
 
 .project.jeu {
-    background-color: cyan;
+    background-color: var(--jeu-color);
 }
 
 .project.ihm {
-    background-color: red;
+    background-color: var(--ihm-color);
 }
 
 .project-header {
