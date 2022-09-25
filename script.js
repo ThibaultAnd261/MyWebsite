@@ -135,6 +135,7 @@ fetch("projects.json")
 
             // span 'Réduire'/'Afficher'
             projectDivStatus.innerHTML = "(Réduire)"
+            projectDivStatus.classList.add("project-statut");
             projectHeader.appendChild(projectDivStatus)
 
             // description du projet
@@ -142,10 +143,6 @@ fetch("projects.json")
             projectDescr.classList.add("project-description");
 
             projectContent.appendChild(projectDescr);
-
-            // type de projet
-            projectCate.innerHTML = element.category;
-            projectContent.appendChild(projectCate);
 
             // langages de programmation utilisés
             var languages = element.languages;
@@ -185,6 +182,12 @@ fetch("projects.json")
                     var logo = document.createElement("i");
                     logo.classList.add("fa-brands", "fa-php");
                     logo.style.color = "#fff";
+                    projectLang.appendChild(logo);
+                }
+                if (language == 'Sql') {
+                    var logo = document.createElement("i");
+                    logo.classList.add("fa-solid", "fa-database");
+                    logo.style.color = "#00758F";
                     projectLang.appendChild(logo);
                 }
             });
@@ -333,16 +336,17 @@ function tableauInit(tabSize) {
 }
 
 function statutDiv(indexProj) {
-    console.log("--------");
-    console.log("Div cliqué : " + indexProj);
     const projCont = document.querySelectorAll(".project-content");
+    const projStat = document.querySelectorAll(".project-statut");
     console.log(projCont);
     if (tab[indexProj] == 0) { // 0 = afficher != 1 = réduire
         tab[indexProj]++;
         projCont[indexProj].style.display = "none";
+        projStat[indexProj].textContent = "(Afficher)";
     } else {
         tab[indexProj]--;
         projCont[indexProj].style.display = "block";
+        projStat[indexProj].textContent = "(Réduire)";
     }
     console.log(tab);
 }
