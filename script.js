@@ -85,20 +85,30 @@ const countDownSentence = setInterval(() => {
     // console.log(index);
 }, 5000);
 
-// ----Partie projet
 
+// ----Partie projet
+// function projectLoading() {
 fetch("projects.json")
     .then(res => res.json())
     .then(data => {
-        // let namePr = document.querySelector('.project-name');
         let gridPr = document.querySelector('.projects-grid');
-        console.log(data);
+        // console.log(data);
         // console.log(namePr);
         data.forEach((element, index) => {
             const project = document.createElement("div");
             project.classList.add("project");
 
+            const projectHeader = document.createElement("div");
+            projectHeader.classList.add("project-header");
+            projectHeader.setAttribute("onclick", "statutDiv(" + index + ")");
+
             const projectName = document.createElement("h3");
+
+            const projectDivStatus = document.createElement("span");
+
+            const projectContent = document.createElement("div");
+            projectContent.classList.add("project-content");
+
             const projectDescr = document.createElement("p");
             const projectCate = document.createElement("div");
             projectCate.classList.add("project-category");
@@ -122,12 +132,21 @@ fetch("projects.json")
             projectName.innerHTML = element.name;
             projectName.classList.add("project-title");
 
+            projectHeader.appendChild(projectName)
+
+            // span 'Réduire'/'Afficher'
+            projectDivStatus.innerHTML = "(Réduire)"
+            projectHeader.appendChild(projectDivStatus)
+
             // description du projet
             projectDescr.innerHTML = element.description;
             projectDescr.classList.add("project-description");
 
+            projectContent.appendChild(projectDescr);
+
             // type de projet
             projectCate.innerHTML = element.category;
+            projectContent.appendChild(projectCate);
 
             // langages de programmation utilisés
             var languages = element.languages;
@@ -170,6 +189,7 @@ fetch("projects.json")
                     projectLang.appendChild(logo);
                 }
             });
+            projectContent.appendChild(projectLang);
 
             // framework
             const spanFr = document.createElement("span");
@@ -178,6 +198,7 @@ fetch("projects.json")
                 spanFr.textContent = "Framework : " + element.framework;
                 projectFram.appendChild(spanFr);
             }
+            projectContent.appendChild(projectFram);
 
             // API
             const spanApi = document.createElement("span");
@@ -186,10 +207,9 @@ fetch("projects.json")
                 spanApi.textContent = "API : " + element.API;
                 projectApi.appendChild(spanApi);
             }
-
+            projectContent.appendChild(projectApi);
 
             var images = element.images;
-            // console.log(images);
 
             const imgFirst = document.createElement("div");
             imgFirst.classList.add("project-imageFirst");
@@ -197,7 +217,6 @@ fetch("projects.json")
             const imgCaption = document.createElement("div");
             imgCaption.classList.add("project-imageCaption");
             imgCaption.textContent = element.caption[0]
-            // console.log(element.caption[0]);
 
             const imgs = document.createElement("div");
             imgs.classList.add("project-images");
@@ -215,7 +234,7 @@ fetch("projects.json")
                     projectImg.src = image;
                     projectImg.alt = element.caption[i];
                     projectImg.classList.add("project-image");
-                    projectImg.setAttribute("onclick", "test(" + i + "," + index + ")");
+                    projectImg.setAttribute("onclick", "swapImg(" + i + "," + index + ")");
                     imgs.appendChild(projectImg);
                     projectGallery.appendChild(imgs);
                 }
@@ -225,6 +244,8 @@ fetch("projects.json")
             projectGallery.appendChild(imgFirst);
             projectGallery.appendChild(imgCaption);
             projectGallery.appendChild(imgs);
+
+            projectContent.appendChild(projectGallery);
 
             // couleur de la div
             switch (element.category) {
@@ -255,6 +276,7 @@ fetch("projects.json")
                 linkGit.appendChild(logo);
                 projectLink.appendChild(linkGit);
             }
+
             if (element.web == "") {
             } else {
                 const linkWeb = document.createElement("a");
@@ -266,59 +288,20 @@ fetch("projects.json")
                 projectLink.appendChild(linkWeb);
 
             }
-            // projectLink
+            projectContent.appendChild(projectLink);
 
             // ajout des "enfants"
-            project.appendChild(projectName);
-            project.appendChild(projectDescr);
-            project.appendChild(projectCate);
-            project.appendChild(projectLang);
-            project.appendChild(projectFram);
-            project.appendChild(projectApi);
-            project.appendChild(projectGallery);
-            project.appendChild(projectLink);
+            project.appendChild(projectHeader);
+            project.appendChild(projectContent);
             gridPr.appendChild(project);
-
-            // const collection = document.getElementsByClassName("project-slider");
-
-            // console.log(collection[index].children.length); // 3 2 3 5 4 4 5 3 4
         });
+        console.log(gridPr.childElementCount);
+        tableauInit(gridPr.childElementCount);
     });
+// }
 
-let cpt = 0;
-function changeImage(index) {
-    console.log("Projet n°" + (index));
-    const collection = document.getElementsByClassName("project-slider");
-
-    const children = collection[index].querySelectorAll('.project-image');
-
-    console.log(children);
-    console.log(cpt + " : compteur début");
-
-    children[cpt].classList.remove("active-img");
-
-    console.log(children);
-    console.log(cpt + " : cpt avant incr");
-    if (cpt === (collection[index].children.length) - 1) {
-        cpt === 0;
-    } else {
-        cpt++;
-    }
-    console.log(cpt + " : compteur apres incr");
-
-    console.log(collection[index].children.length + " : nb d'enfant");
-    children[cpt].classList.add("active-img");
-
-
-    // console.log(collection[index].children.length); // 3
-    // console.log(collection[index]);
-    console.log(children);
-    // console.log(children[0].className);
-    console.log("-----------");
-}
-
-
-function test(indexImg, indexProj) {
+// onclick
+function swapImg(indexImg, indexProj) {
     fetch("projects.json")
         .then(res => res.json())
         .then(data => {
@@ -341,3 +324,33 @@ function test(indexImg, indexProj) {
             captionDiv[indexProj].textContent = imgDivPrincipal[indexProj].alt;
         });
 }
+
+// initialisation du tableau pour changer le statut d'une div (afficher/cacher)
+let tab = [];
+function tableauInit(tabSize) {
+    for (var i = 0; i < tabSize; i++) {
+        tab[i] = 0;
+    }
+    console.log(tab);
+}
+
+function statutDiv(indexProj) {
+    console.log("--------");
+    console.log("Div cliqué : " + indexProj);
+    const projCont = document.querySelectorAll(".project-content");
+    console.log(projCont);
+    if (tab[indexProj] == 0) { // 0 = afficher != 1 = réduire
+        tab[indexProj]++;
+        projCont[indexProj].style.display = "none";
+    } else {
+        tab[indexProj]--;
+        projCont[indexProj].style.display = "block";
+    }
+    console.log(tab);
+}
+
+// window.addEventListener("load", myInit, true);
+
+// function myInit() {
+//     projectLoading();
+// }

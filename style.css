@@ -300,9 +300,21 @@ i.light-icon {
     background-color: red;
 }
 
-.project-title {
-    text-align: center;
-    font-size: 1.4rem;
+.project-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.project-header span {
+    margin: 0% 1%;
+}
+
+.project-content {
+    padding: 4% 0%;
 }
 
 .project-description {
@@ -357,8 +369,6 @@ i.light-icon {
 
 .project-image.active-img {
     max-width: 100%;
-    /* animation-name: fadeInImg;
-    animation-duration: 1.5s; */
 }
 
 @keyframes fadeInImg {
