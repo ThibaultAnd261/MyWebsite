@@ -56,7 +56,8 @@ a {
 }
 
 .fa-c,
-.fa-envelope {
+.fa-envelope,
+.fa-briefcase {
     color: #000;
     font-size: 1.6rem;
 }
@@ -100,6 +101,8 @@ a {
 .fa-location-dot {
     color: rgb(205, 30, 30);
 }
+
+
 
 /* navbar */
 
@@ -538,6 +541,10 @@ i.light-icon {
     border: 3px solid #6eb158;
 }
 
+.skills-tech.others {
+    border: 3px solid #cd5151;
+}
+
 .skills-subtitle {
     padding: 10px 0;
 }
@@ -563,7 +570,7 @@ i.light-icon {
 }
 
 .skills-right {
-    border-left: 2px solid black;
+    border-left: 2px solid var(--writing-color);
     padding-left: 5%;
 }
 
