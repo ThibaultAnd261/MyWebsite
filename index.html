@@ -15,23 +15,24 @@
     <nav class="navbar">
         <div class="navbar-container">
             <img class="navbar-logo" src="./assets/img/logo-TA.png" alt="">
-            <p class="navbar-title">
-                MonSite
-            </p>
+            <a href="#header">
+                <p class="navbar-title">
+                    MonSite
+                </p>
+            </a>
             <div class="navbar-links">
                 <ul>
-                    <li><a href="">Projets </a></li>
-                    <li><a href="">Compétences </a></li>
-                    <li><a href="">A propos </a></li>
-                    <li><a href="">Contactez moi </a></li>
-                    <li><a href="">Suivez moi </a></li>
+                    <li><a href="#projects">Projets </a></li>
+                    <li><a href="#skills">Compétences </a></li>
+                    <li><a href="#about">A propos </a></li>
+                    <li><a href="#contacts">Contactez moi </a></li>
                 </ul>
             </div>
             <i class="light-icon fa-solid fa-moon" onclick="websiteTheme()"></i>
             <img class="burger-icon" src="./assets/icon/burger-icon.png" onclick="burgerMenu()" alt="">
         </div>
     </nav>
-    <header class="header">
+    <header class="header" id="header">
         <div class="header-top">
             <div class="header-welcome">
                 <p class="header-sentence">Test</p>
@@ -49,7 +50,7 @@
                     </div>
                     <div class="header-info">
                         <span>Informatique : </span>
-                        <span>&nbsp;Développement Web</span>
+                        <span>&nbsp;Développement Web (Front/Back)</span>
                     </div>
                     <div class="header-info">
                         <span>Nationalité : </span>
@@ -58,6 +59,10 @@
                     <div class="header-info">
                         <span>Diplômes actuels : </span>
                         <span>&nbsp;Baccalauréat Scientifique, DUT Informatique</span>
+                    </div>
+                    <div class="header-info">
+                        <span>Permis : </span>
+                        <span>&nbsp;Permis B</span>
                     </div>
                 </div>
             </div>
@@ -70,7 +75,7 @@
         </path>
     </svg>
 
-    <section class="projects">
+    <section class="projects" id="projects">
         <div class="projects-top">
             <div class="projects-title">
                 <h1>Mes projets</h1>
@@ -94,7 +99,7 @@
         </div>
     </section>
 
-    <section class="skills">
+    <section class="skills" id="skills">
         <div class="skills-title">
             <h1>Mes compétences</h1>
         </div>
@@ -178,7 +183,7 @@
         </div>
     </section>
 
-    <section class="about">
+    <section class="about" id="about">
         <div class="about-title">
             <h1>A propos</h1>
         </div>
@@ -193,8 +198,7 @@
                         <div class="about-hobbyDescription">
                             <p>Etant passionné par les jeux vidéo depuis mon jeune âge, l'univers de
                                 l'Informatique et de la programmation commençait à m'intéresser de plus en plus. J'ai eu
-                                mes premières expériences de code en classe de première grâce à l'enseignement
-                                d'exploration ICN, Informatique et Creation Numérique.</p>
+                                mes premières expériences au lycée via l'option ISN.</p>
                         </div>
                     </div>
                     <div class="about-hobby">
@@ -252,34 +256,57 @@
                 </div>
             </div>
             <div class="about-personalities">
-                <h3>Ma personnalité :</h3>
+                <h3>Personnalité :</h3>
                 <div class="about-personalityList">
                     <div class="about-personality">
                         <img src="https://t4.ftcdn.net/jpg/01/07/77/79/360_F_107777961_AMelqVceYWAtiUIMY6MzbO532t3Nszbt.jpg"
                             alt="Poignée de main" class="about-personalityImg">
-                        <span class="about-personalityName">Travailleur en équipe</span>
+                        <p class="about-personalityName">Travailleur en équipe</p>
                     </div>
                     <div class="about-personality">
                         <img src="https://i0.wp.com/echecetstrat.com/wp-content/uploads/2019/09/curiosity.jpg?ssl=1"
                             alt="Plusieurs questions en tête" class="about-personalityImg">
-                        <span class="about-personalityName">Curieux</span>
+                        <p class="about-personalityName">Curieux</p>
                     </div>
                     <div class="about-personality">
                         <img src="https://www.wikihow.com/images_en/thumb/2/29/Be-Social-Step-15.jpg/v4-460px-Be-Social-Step-15.jpg.webp"
                             alt="Deux personnes sociables" class="about-personalityImg">
-                        <span class="about-personalityName">Sociable</span>
+                        <p class="about-personalityName">Sociable</p>
                     </div>
                     <div class="about-personality">
                         <img src="https://i0.wp.com/www.why-consulting.com/wp-content/uploads/2020/03/Ecoute-client-scaled-e1584709971426.jpg?fit=760%2C505&ssl=1"
                             alt="A l'écoute de quelque chose" class="about-personalityImg">
-                        <span class="about-personalityName">A l'écoute</span>
+                        <p class="about-personalityName">A l'écoute</p>
                     </div>
                     <div class="about-personality">
                         <img src="https://apcse-expert.com/wp-content/uploads/2020/05/Sans-titre-3-1024x853.png"
                             alt="Organisation dans le monde du travail" class="about-personalityImg">
-                        <span class="about-personalityName">Sens de l'organisation</span>
+                        <p class="about-personalityName">Sens de l'organisation</p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+    <section class="contacts" id="contacts">
+        <div class="contacts-title">
+            <h1>Contactez-moi</h1>
+        </div>
+        <div class="contacts-list">
+            <div class="contact">
+                <i class="fa-sharp fa-solid fa-envelope"></i>
+                <a href="mailto:thibaultandpro@gmail.com" target="_blank">thibaultandpro@gmail.com</a>
+            </div>
+            <div class="contact">
+                <i class="fa-brands fa-github"></i>
+                <a href="https://github.com/ThibaultAnd261" target="_blank">ThibaultAnd261</a>
+            </div>
+            <div class="contact">
+                <i class="fa-brands fa-linkedin-in"></i>
+                <a href="https://www.linkedin.com/in/thibault-andriamasinoro/" target="_blank">Mon LinkedIn</a>
+            </div>
+            <div class="contact">
+                <i class="fa-solid fa-location-dot"></i>
+                <legend>Paris et périphérie</legend>
             </div>
         </div>
     </section>

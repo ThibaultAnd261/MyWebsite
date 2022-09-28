@@ -5,6 +5,8 @@
     --navbar-color: #FAD02C;
     --navbar-color2: #f6d861;
     --writing-color: #000;
+    --main-color: #f5f5f5;
+    --reverse-main-color: #3b3d4b;
     --icon-filled-color: #333652;
     --icon-color: #fff;
     --header-info-color: #fff;
@@ -19,6 +21,18 @@
     margin: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     box-sizing: border-box;
+}
+
+body {
+    background-color: var(--main-color);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
 }
 
 .fa-html5 {
@@ -41,7 +55,8 @@
     font-size: 1.6rem;
 }
 
-.fa-c {
+.fa-c,
+.fa-envelope {
     color: #000;
     font-size: 1.6rem;
 }
@@ -64,6 +79,26 @@
 .fa-laravel {
     color: #F05340;
     font-size: 1.6rem;
+}
+
+.fa-github,
+.fa-figma {
+    color: #171515;
+    font-size: 1.6rem;
+}
+
+.fa-linux {
+    color: #333333;
+    font-size: 1.6rem;
+}
+
+.fa-linkedin-in {
+    color: #0072b1;
+    font-size: 1.6rem;
+}
+
+.fa-location-dot {
+    color: rgb(205, 30, 30);
 }
 
 /* navbar */
@@ -265,9 +300,11 @@ i.light-icon {
 
 .projects,
 .skills,
-.about {
+.about,
+.contacts {
     padding: 20px;
     margin: 10px 0;
+    color: var(--writing-color);
 }
 
 .projects-top {
@@ -280,7 +317,8 @@ i.light-icon {
 
 .projects-title h1,
 .skills-title h1,
-.about-title h1 {
+.about-title h1,
+.contacts h1 {
     text-align: center;
     font-size: 1.8rem;
     margin: 20px 0;
@@ -302,6 +340,10 @@ i.light-icon {
     margin: 5% 0%;
     border-radius: 10px;
     font-size: 1.1rem;
+}
+
+.projects-btnReset:hover {
+    cursor: pointer;
 }
 
 .legend-color {
@@ -363,12 +405,18 @@ i.light-icon {
     cursor: pointer;
 }
 
+.project-title {
+    word-break: break-word;
+}
+
 .project-header span {
     margin: 0% 1%;
 }
 
 .project-content {
     padding: 4% 0%;
+
+    display: none;
 }
 
 .project-description {
@@ -515,7 +563,7 @@ i.light-icon {
 }
 
 .skills-right {
-    border-left: 1px solid black;
+    border-left: 2px solid black;
     padding-left: 5%;
 }
 
@@ -615,6 +663,50 @@ img.skill-logo {
     font-size: 1.2rem;
 }
 
+/* contact */
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 35px;
+    margin: 5% 0;
+    border: 3px solid #000;
+    border-radius: 10px;
+}
+
+.contact i {
+    font-size: 2.2rem;
+    margin: 2% 0;
+}
+
+.contact a,
+.contact legend {
+    color: var(--writing-color);
+    font-size: 1.2rem;
+    text-align: justify;
+    word-break: break-word;
+}
+
+.contact:hover {
+    animation: fillColor .8s both;
+}
+
+@keyframes fillColor {
+    from {
+        background-color: #fff;
+    }
+
+    to {
+        background-color: var(--navbar-color);
+    }
+}
+
+.contact a:hover {
+    transform: scale(1.1);
+    text-decoration: underline;
+}
+
 @media only screen and (min-width: 1150px) {
 
     /* menu burger */
@@ -696,6 +788,11 @@ img.skill-logo {
         font-size: 1.2rem;
     }
 
+    .project-framework span,
+    .project-api span {
+        font-size: 1.2rem;
+    }
+
     .projects-grid {
         grid-template-columns: auto auto;
     }
@@ -710,5 +807,48 @@ img.skill-logo {
 
     .project-images img {
         width: 230px;
+    }
+
+    /* hobbies */
+    /* BREAKPOINT POUR LES FORMATS ZFOLD A JOUTER (HOVER->DESCR) */
+
+    .about-hobbiesList {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .about-hobby {
+        width: 40%;
+        margin: 20px 0;
+    }
+
+    .about-personalityList {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .about-personality {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-personalityName {
+        margin-left: 0;
+    }
+
+    /* contact */
+
+    .contacts-list {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .contact {
+        width: 20%;
     }
 }

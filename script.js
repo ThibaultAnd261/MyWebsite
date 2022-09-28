@@ -35,20 +35,24 @@ let theme = 0; // 0 = nuit, 1 = jour
 function websiteTheme() {
     const themeIcon = document.querySelector('.light-icon');
     const waveSvg = document.querySelector('.wave');
-    if (theme == 0) { // nuit à jour
+    if (theme == 0) { // jour à nuit
         document.documentElement.style.setProperty('--navbar-color', '#333652');
         document.documentElement.style.setProperty('--navbar-color2', '#474959');
         document.documentElement.style.setProperty('--writing-color', '#fff');
+        document.documentElement.style.setProperty('--main-color', '#3b3d4b');
+        document.documentElement.style.setProperty('--reverse-main-color', '#f5f5f5');
         document.documentElement.style.setProperty('--icon-filled-color', '#FAD02C');
         document.documentElement.style.setProperty('--header-info-color', '#888888');
         waveSvg.style.fill = '#474959';
         themeIcon.classList.remove('fa-moon');
         themeIcon.classList.add('fa-sun');
         theme++;
-    } else { // jour à nuit  
+    } else { //  nuit à jour  
         document.documentElement.style.setProperty('--navbar-color', '#FAD02C');
         document.documentElement.style.setProperty('--navbar-color2', '#f6d861');
         document.documentElement.style.setProperty('--writing-color', '#000');
+        document.documentElement.style.setProperty('--main-color', '#f5f5f5');
+        document.documentElement.style.setProperty('--reverse-main-color', '#3b3d4b');
         document.documentElement.style.setProperty('--icon-filled-color', '#333652');
         document.documentElement.style.setProperty('--header-info-color', '#fff');
         waveSvg.style.fill = '#f6d861';
@@ -134,7 +138,8 @@ fetch("projects.json")
             projectHeader.appendChild(projectName)
 
             // span 'Réduire'/'Afficher'
-            projectDivStatus.innerHTML = "(Réduire)"
+            // projectDivStatus.innerHTML = "(Réduire)"
+            projectDivStatus.innerHTML = "(Afficher)"
             projectDivStatus.classList.add("project-statut");
             projectHeader.appendChild(projectDivStatus)
 
@@ -338,14 +343,14 @@ function statutDiv(indexProj) {
     const projCont = document.querySelectorAll(".project-content");
     const projStat = document.querySelectorAll(".project-statut");
     console.log(projCont);
-    if (tab[indexProj] == 0) { // 0 = afficher != 1 = réduire
+    if (tab[indexProj] == 0) { // 0 = réduire != 1 = afficher
         tab[indexProj]++;
-        projCont[indexProj].style.display = "none";
-        projStat[indexProj].textContent = "(Afficher)";
-    } else {
-        tab[indexProj]--;
         projCont[indexProj].style.display = "block";
         projStat[indexProj].textContent = "(Réduire)";
+    } else {
+        tab[indexProj]--;
+        projCont[indexProj].style.display = "none";
+        projStat[indexProj].textContent = "(Afficher)";
     }
     console.log(tab);
 }
