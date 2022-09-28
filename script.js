@@ -181,7 +181,6 @@ fetch("projects.json")
                 if (language == 'PHP') {
                     var logo = document.createElement("i");
                     logo.classList.add("fa-brands", "fa-php");
-                    logo.style.color = "#fff";
                     projectLang.appendChild(logo);
                 }
                 if (language == 'Sql') {

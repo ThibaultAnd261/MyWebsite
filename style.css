@@ -21,6 +21,51 @@
     box-sizing: border-box;
 }
 
+.fa-html5 {
+    color: #FFA500;
+    font-size: 1.6rem;
+}
+
+.fa-css3-alt {
+    color: #2965f1;
+    font-size: 1.6rem;
+}
+
+.fa-js {
+    color: #f7df1e;
+    font-size: 1.6rem;
+}
+
+.fa-java {
+    color: #5382a1;
+    font-size: 1.6rem;
+}
+
+.fa-c {
+    color: #000;
+    font-size: 1.6rem;
+}
+
+.fa-database {
+    color: #00758F;
+    font-size: 1.6rem;
+}
+
+.fa-php {
+    color: #484C89;
+    font-size: 1.6rem;
+}
+
+.fa-react {
+    color: #61DBFB;
+    font-size: 1.6rem;
+}
+
+.fa-laravel {
+    color: #F05340;
+    font-size: 1.6rem;
+}
+
 /* navbar */
 
 .navbar {
@@ -218,8 +263,11 @@ i.light-icon {
     font-family: 'Poppins', sans-serif;
 }
 
-.projects {
+.projects,
+.skills,
+.about {
     padding: 20px;
+    margin: 10px 0;
 }
 
 .projects-top {
@@ -230,9 +278,12 @@ i.light-icon {
     margin: 10% 0;
 }
 
-.projects-title h1 {
+.projects-title h1,
+.skills-title h1,
+.about-title h1 {
     text-align: center;
     font-size: 1.8rem;
+    margin: 20px 0;
 }
 
 .projects-legend {
@@ -260,6 +311,10 @@ i.light-icon {
     padding: 15px;
 }
 
+.legend-color:hover {
+    cursor: pointer;
+}
+
 .legend-color.web {
     background-color: var(--web-color);
 }
@@ -279,12 +334,12 @@ i.light-icon {
 .projects-grid {
     display: grid;
     grid-template-columns: auto;
-    gap: 1%;
 }
 
 .project {
     padding: 5%;
     border-radius: 20px;
+    margin: 3% 0%;
 }
 
 .project.web {
@@ -379,6 +434,7 @@ i.light-icon {
 .project-imageCaption {
     text-align: center;
     margin: 3% 0%;
+    font-size: 1.1rem;
 }
 
 .project-images {
@@ -393,8 +449,6 @@ i.light-icon {
     cursor: pointer;
 }
 
-
-
 .project-link {
     text-align: end;
 }
@@ -405,6 +459,160 @@ i.light-icon {
     font-size: 1.6rem;
     margin-left: 5%;
 
+}
+
+/* skills */
+
+.skills-tech {
+    /* border: 3px solid #5888b1; */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 10px;
+    margin: 20px 0;
+}
+
+.skills-tech.web {
+    border: 3px solid #5888b1;
+}
+
+.skills-tech.framework {
+    border: 3px solid #b16758;
+}
+
+.skills-tech.programming {
+    border: 3px solid #b158ae;
+}
+
+.skills-tech.database {
+    border: 3px solid #31458d;
+}
+
+.skills-tech.tools {
+    border: 3px solid #6eb158;
+}
+
+.skills-subtitle {
+    padding: 10px 0;
+}
+
+.skills-container {
+    padding: 10px 0;
+}
+
+.skills-container2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.skills-left,
+.skills-right {
+    width: 50%;
+}
+
+.skills-titleLeft,
+.skills-titleRight {
+    font-size: 1.1rem;
+}
+
+.skills-right {
+    border-left: 1px solid black;
+    padding-left: 5%;
+}
+
+.skills-framework {
+    padding: 2% 0%;
+}
+
+.skills-frameworkSubtitle {
+    display: flex;
+}
+
+.skills-frameworkSubtitle p {
+    padding-left: 3%;
+}
+
+ul li {
+    text-decoration: none;
+    list-style: none;
+    padding: 5px 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+ul li i {
+    width: 40px;
+}
+
+li span {
+    font-size: 1.1rem;
+}
+
+ul li img.skill-logo {
+    margin-right: 7%;
+}
+
+img.skill-logo {
+    width: 30px;
+}
+
+/* about */
+
+.about-hobbies h3,
+.about-personalities h3 {
+    margin: 20px 0;
+    font-size: 1.2rem;
+}
+
+.about-hobby,
+.about-personality {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    margin: 60px 0;
+    position: relative;
+}
+
+.about-hobby:hover .about-hobbyDescription {
+    opacity: 1;
+    width: 100%;
+}
+
+.about-hobby:hover .about-hobbyName {
+    opacity: 0;
+}
+
+.about-hobby:hover .about-hobbyImg {
+    opacity: 0;
+}
+
+.about-hobbyName,
+.about-personalityName {
+    margin-left: 20px;
+}
+
+.about-hobbyDescription {
+    position: absolute;
+    opacity: 0;
+}
+
+.about-hobbyDescription p {
+    color: var(--writing-color);
+    font-size: 1.0rem;
+    text-align: justify;
+}
+
+.about-hobby img,
+.about-personality img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 15px #555;
+}
+
+.about-hobby span,
+.about-personality span {
+    font-size: 1.2rem;
 }
 
 @media only screen and (min-width: 1150px) {
@@ -438,7 +646,6 @@ i.light-icon {
 
     .navbar-links ul li:nth-child(3),
     .navbar-links ul li:nth-child(5) {
-        /* background-color: blue; */
         border-right: 2px solid var(--writing-color);
     }
 
@@ -459,12 +666,20 @@ i.light-icon {
 
     /* projects */
 
+    .project {
+        margin: 3% 1%;
+    }
+
     .projects-top {
         margin: 7% 0%;
     }
 
     .projects-title {
         margin: 5% 0%;
+    }
+
+    .project-imageCaption {
+        font-size: 1.2rem;
     }
 
     .legend-color {
@@ -478,6 +693,7 @@ i.light-icon {
 
     .project-description {
         text-indent: 50px;
+        font-size: 1.2rem;
     }
 
     .projects-grid {
